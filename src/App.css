@@ -1,0 +1,24 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: whitesmoke;
+  padding: 1rem;
+}
+
+@media (max-width: 480px) {
+  .App {
+    flex-direction: column-reverse;
+  }
+  .linkedInpost {
+    height: 50%;
+    width: 80%;
+  }
+  .mailList {
+    height: 50%;
+    width: 80%;
+  }
+}

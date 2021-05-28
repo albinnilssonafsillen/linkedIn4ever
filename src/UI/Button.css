@@ -1,0 +1,13 @@
+.btn {
+    padding: 0.5rem;
+    border-radius: 25px;
+    background-color:tomato;
+    color:whitesmoke;
+    font-weight: bold;
+    align-items: flex-end;
+    cursor: pointer;
+  }
+
+  .btn:disabled {
+    background-color: grey;
+  }

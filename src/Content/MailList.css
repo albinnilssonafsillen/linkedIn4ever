@@ -1,0 +1,18 @@
+.sendMail {
+  margin: 1rem;
+  width: 100%;
+}
+
+.douchQuote {
+  font-style: italic;
+}
+
+.mailList {
+  height: 60vmin;
+  width: 60vmin;
+  margin-right: 2rem;
+}
+
+.count {
+  display: none;
+}
