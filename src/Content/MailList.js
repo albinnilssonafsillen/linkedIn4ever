@@ -5,27 +5,18 @@ import axios from 'axios'
 import './MailList.css';
 
 const MailList = () => {
-    const [disabled, setDisabled] = useState(true);
 
-    const disableButton = () => {
-        setDisabled(false);
-    }
+    const [mail, setValidMail] = useState('');
 
     const saveToMailList = () => {
-        axios.post('http://localhost:5000/post', {mail: "lol@mailcom"})
+        axios.post('http://localhost:5000/post', { mail: "lol@mailcom" })
             .then(res => {
-                console.log(res)
+                console.log('K1ng!!! ♥')
             })
             .catch(err => {
                 console.log(err)
             })
     }
-    // useEffect(() => {
-    //     function disableBtn() {
-    //         document.querySelector('mail').value.length == 0 ? setDisabled(true) : setDisabled(false);
-    //     }
-    //     disableBtn()
-    // }, []);
 
     return (
         <div className="mailList">
@@ -37,8 +28,8 @@ const MailList = () => {
             <p>Personen blev såklart unisont hyllad på LinkedIn. Inga kritiska frågor om förslagsvis <strong>beroendeställning</strong> osv.</p>
             <p>För att säkerställa att jag inte blir en liknande person blir jag påmind en gång i halvåret om detta. Om du, käre besökare önskar bli påmind, Vänligen ange mail nedan:</p>
             <div className="sendMail">
-                <Input id="mail" onChange={() => disableButton()} type="text" placeHolder="LinkedIn@spray.se" />
-                <Button disabled={disabled} text="Påminn" onClick={() => saveToMailList()} />
+                <Input id="mail" onChange={e => setValidMail(e.target.value)} value={mail} type="text" placeHolder="LinkedIn@spray.se" />
+                <Button disabled={!mail} text="Påminn" onClick={() => saveToMailList()} />
             </div>
             <div className="count">
                 <p>Personer i mailutskick:'props.count'</p>
